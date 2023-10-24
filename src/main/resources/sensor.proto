@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "hr.fer.tel.rassus.sensor.sensorapplication";
+
+package hr.fer.tel.rassus.sensor;
+
+// The uppercase service definition.
+service ReadingService {
+  // Sends a greeting
+  rpc RequestReading (Empty) returns (Reading) {}
+}
+
+// The response message containing the greetings
+message Reading {
+  int32 temperature = 1;
+  int32 pressure = 2;
+  int32 humidity = 3;
+  int32 co = 4;
+  int32 no2 = 5;
+  int32 so2 = 6;
+}
+
+message Empty{}
