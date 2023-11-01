@@ -1,6 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Sensor3" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="hr.fer.tel.rassus.sensor.sensorapplication.SensorApplication" />
+  <configuration default="false" name="Sensor3" type="Application" factoryName="Application" singleton="false">
+    <envs>
+      <env name="GRADLE_OPTS" value="'-Dorg.gradle.logging.level=info'" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="hr.fer.tel.rassus.examples.SensorApplication" />
     <module name="SensorApplication.main" />
     <option name="PROGRAM_PARAMETERS" value="127.0.0.1 8082" />
     <method v="2">
