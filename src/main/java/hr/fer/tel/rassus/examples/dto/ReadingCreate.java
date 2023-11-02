@@ -2,58 +2,58 @@ package hr.fer.tel.rassus.examples.dto;
 
 public class ReadingCreate {
 
-    private Integer temperature;
-    private Integer pressure;
-    private Integer humidity;
-    private Integer co;
-    private Integer no2;
-    private Integer so2;
+    private Double temperature;
+    private Double pressure;
+    private Double humidity;
+    private Double co;
+    private Double no2;
+    private Double so2;
 
-    public Integer getTemperature() {
+    public Double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(Integer temperature) {
+    public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
 
-    public Integer getPressure() {
+    public Double getPressure() {
         return pressure;
     }
 
-    public void setPressure(Integer pressure) {
+    public void setPressure(Double pressure) {
         this.pressure = pressure;
     }
 
-    public Integer getHumidity() {
+    public Double getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(Integer humidity) {
+    public void setHumidity(Double humidity) {
         this.humidity = humidity;
     }
 
-    public Integer getCo() {
+    public Double getCo() {
         return co;
     }
 
-    public void setCo(Integer co) {
+    public void setCo(Double co) {
         this.co = co;
     }
 
-    public Integer getNo2() {
+    public Double getNo2() {
         return no2;
     }
 
-    public void setNo2(Integer no2) {
+    public void setNo2(Double no2) {
         this.no2 = no2;
     }
 
-    public Integer getSo2() {
+    public Double getSo2() {
         return so2;
     }
 
-    public void setSo2(Integer so2) {
+    public void setSo2(Double so2) {
         this.so2 = so2;
     }
 }

@@ -19,7 +19,7 @@ public class SensorApplication {
     public static void main(String[] args) throws IOException, InterruptedException {
         sensor = new Sensor(args[0], Integer.valueOf(args[1]));
         sensor.setId(serverClient.register(Mapper.toSensorCreate(sensor)));
-        logger.info("Registered sensor");
+        logger.info("Registered sensor(id = "  + sensor.getId() +")");
         final SensorServer server = new SensorServer(new SensorService(), sensor.getIpPort().getPort());
         logger.info("Started own grpc server");
         server.start();
@@ -27,8 +27,10 @@ public class SensorApplication {
             currentReading = sensor.getReading();
             logger.info("Read new reading");
             ReadingResp readingResp = fetchReading();
-            currentReading.calibrate(readingResp);
-            logger.info("Calibrated new reading");
+            if (readingResp != null) {
+                currentReading.calibrate(readingResp);
+                logger.info("Calibrated new reading");
+            }
             serverClient.storeReading(sensor.getId(), Mapper.toReadingCreate(currentReading));
             logger.info("Stored new reading");
             Thread.sleep(10000);

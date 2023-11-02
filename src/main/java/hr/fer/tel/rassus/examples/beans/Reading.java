@@ -6,68 +6,68 @@ import hr.fer.tel.rassus.examples.ReadingResp;
 public class Reading {
 
     @CsvBindByName(column = "Temperature")
-    private Integer temperature;
+    private Double temperature;
 
     @CsvBindByName(column = "Pressure")
-    private Integer pressure;
+    private Double pressure;
 
     @CsvBindByName(column = "Humidity")
-    private Integer humidity;
+    private Double humidity;
 
     @CsvBindByName(column = "CO")
-    private Integer co;
+    private Double co;
 
     @CsvBindByName(column = "NO2")
-    private Integer no2;
+    private Double no2;
 
     @CsvBindByName(column = "SO2")
-    private Integer so2;
+    private Double so2;
 
-    public Integer getTemperature() {
+    public Double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(Integer temperature) {
+    public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
 
-    public Integer getPressure() {
+    public Double getPressure() {
         return pressure;
     }
 
-    public void setPressure(Integer pressure) {
+    public void setPressure(Double pressure) {
         this.pressure = pressure;
     }
 
-    public Integer getHumidity() {
+    public Double getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(Integer humidity) {
+    public void setHumidity(Double humidity) {
         this.humidity = humidity;
     }
 
-    public Integer getCo() {
+    public Double getCo() {
         return co;
     }
 
-    public void setCo(Integer co) {
+    public void setCo(Double co) {
         this.co = co;
     }
 
-    public Integer getNo2() {
+    public Double getNo2() {
         return no2;
     }
 
-    public void setNo2(Integer no2) {
+    public void setNo2(Double no2) {
         this.no2 = no2;
     }
 
-    public Integer getSo2() {
+    public Double getSo2() {
         return so2;
     }
 
-    public void setSo2(Integer so2) {
+    public void setSo2(Double so2) {
         this.so2 = so2;
     }
 
@@ -83,10 +83,10 @@ public class Reading {
         setSo2(average(getSo2(), resp.getSo2()));
     }
 
-    private Integer average(Integer value1, Integer value2) {
-        if (value1 == null && value2 == null) return null;
-        if (value1 == null) return value2;
-        if (value2 == null) return value1;
+    private Double average(Double value1, Double value2) {
+        if ((value1 == null || value1 == 0) && (value2 == null || value2 == 0)) return null;
+        if ((value1 == null || value1 == 0)) return value2;
+        if ((value2 == null || value2 == 0)) return value1;
         return (value1 + value2) / 2;
     }
 }
